@@ -1,24 +1,18 @@
 <template>
-  <div class="todo_item">
-    <ul>
-      <li v-for="(item,index) in todoList" :key="index" @click="handleDelete(index)">{{item}}</li>
-    </ul>
-  </div>
+  <li class="todo_item" @click="handleDelete">{{content}}</li>
 </template>
 
 <script>
 export default {
   name: "todo_item",
   props: {
-    todoList: Array
+    content: String,
+    index: Number
   },
   methods: {
-    handleDelete: function(index) {
-      this.$emit("delete", index);
+    handleDelete() {
+      this.$emit("delete", this.index);
     }
-  },
-  data() {
-    return {};
   }
 };
 </script>

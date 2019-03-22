@@ -3,12 +3,12 @@
     <div class="green" :title="title">{{ msg }}</div>
     <input v-model="inputValue">
     <button @click="handleSubmit">提交</button>
-    <TodoItem :todoList="todoList" @delete="handleDelete"/>
+    <TodoBottom :todoList="todoList" @delete="handleDelete"/>
   </div>
 </template>
 
 <script>
-import TodoItem from "./TodoItem.vue";
+import TodoBottom from "./TodoBottom.vue";
 
 export default {
   name: "todolist",
@@ -16,15 +16,15 @@ export default {
     msg: String
   },
   components: {
-    TodoItem
+    TodoBottom
   },
   methods: {
-    handleSubmit: function() {
+    handleSubmit() {
       if (!this.inputValue) return;
       this.todoList.push(this.inputValue);
       this.inputValue = "";
     },
-    handleDelete: function(index) {
+    handleDelete(index) {
       //  vue 帮我们去找 具体的实现如下
       //  this.$data.todoList  ===  this.todoList
       this.todoList.splice(index, 1);
