@@ -3,23 +3,31 @@
     <div class="green" :title="title">{{ msg }}</div>
     <input v-model="inputValue">
     <button @click="handleSubmit">提交</button>
-    <ul>
-      <li v-for="(item,index) in todoList" :key="index">{{item}}</li>
-    </ul>
+    <TodoItem :todoList="todoList" @delete="handleDelete"/>
   </div>
 </template>
 
 <script>
+import TodoItem from "./TodoItem.vue";
+
 export default {
   name: "todolist",
   props: {
     msg: String
+  },
+  components: {
+    TodoItem
   },
   methods: {
     handleSubmit: function() {
       if (!this.inputValue) return;
       this.todoList.push(this.inputValue);
       this.inputValue = "";
+    },
+    handleDelete: function(index) {
+      //  vue 帮我们去找 具体的实现如下
+      //  this.$data.todoList  ===  this.todoList
+      this.todoList.splice(index, 1);
     }
   },
   data() {
