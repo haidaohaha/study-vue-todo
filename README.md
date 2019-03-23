@@ -21,3 +21,8 @@ handleDelete(index)
 this.\$data.todoList === this.todoList
 
 这样能明白 this.todoList 直接书写拿到数据
+
+#### GetSetFun
+
+讲解 计算属性、watch、以及 Get Set 的使用  
+重点是三种改变 fullName 的操作。
