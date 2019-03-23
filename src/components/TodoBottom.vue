@@ -30,7 +30,37 @@ export default {
   },
   data() {
     return {};
-  }
+  },
+  // 生命周期
+  // beforeCreate() {
+  //   console.log(this.$el);
+  //   console.log("beforeCreate");
+  // },
+  // created() {
+  //   console.log(this.$el);
+  //   console.log("created");
+  // },
+  // beforeMount() {
+  //   console.log(this.$el);
+  //   console.log("beforeMount");
+  // },
+  // mounted() {
+  //   console.log(this.$el);
+  //   console.log("mounted");
+  // },
+  // beforeUpdate() {
+  //   console.log("beforeUpdate");
+  // },
+  // updated(){
+  //   console.log("updated");
+  // },
+  // // 销毁 参见 TodoItem
+  // beforeDestroy(){
+  //   console.log("beforeDestroy");
+  // },
+  // destroyed(){
+  //   console.log("destroyed");
+  // }
 };
 </script>
 

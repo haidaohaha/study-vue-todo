@@ -13,6 +13,13 @@ export default {
     handleDelete() {
       this.$emit("delete", this.index);
     }
+  },
+  // 生命周期
+  beforeDestroy() {
+    console.log("beforeDestroy");
+  },
+  destroyed() {
+    console.log("destroyed");
   }
 };
 </script>
