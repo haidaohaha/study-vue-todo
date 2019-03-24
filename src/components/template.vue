@@ -8,6 +8,7 @@
 <script>
 export default {
   name: "class_style_use",
+  components:{},
   computed: {},
   watch: {},
   methods: {},

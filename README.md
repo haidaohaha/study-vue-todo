@@ -20,7 +20,9 @@ handleDelete(index)
 
 this.\$data.todoList === this.todoList
 
-这样能明白 this.todoList 直接书写拿到数据
+这样能明白 this.todoList 直接书写拿到数据  
+
+### chapter_three
 
 #### GetSetFun
 
@@ -37,3 +39,10 @@ this.\$data.todoList === this.todoList
 第二种方式：直接对数组对象，赋值 改变应用；  
 第三种方式：set 方法，在构建工具中 调用 this.$set();   
 注意：数组和对象，set 操作的不同。  
+
+### chapter_four
+
+#### UseRef  
+本节主要是讲解，ref 的使用，之前，不明白怎么使用，CV 操作，通过 this.$refs.ref 拿到节点对象，可以使用节点内的属性，  
+本节，有案例，不使用 父子组件通信，只使用 ref 。
+
