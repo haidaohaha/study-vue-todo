@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <TodoList msg="TodoList"/>
+    <ClassStyleUse/>
   </div>
 </template>
 
 <script>
 import TodoList from "./components/TodoList.vue";
+import ClassStyleUse from "./components/ClassStyleUse.vue";
 
 export default {
   name: "app",
   components: {
-    TodoList
+    TodoList,
+    ClassStyleUse
   }
 };
 </script>
