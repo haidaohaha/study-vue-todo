@@ -4,13 +4,11 @@
     <input v-model="inputValue">
     <button @click="handleSubmit">提交</button>
     <TodoBottom :todoList="todoList" @delete="handleDelete"/>
-    <GetSetFun/>
   </div>
 </template>
 
 <script>
 import TodoBottom from "./TodoBottom.vue";
-import GetSetFun from "./GetSetFun.vue";
 
 export default {
   name: "todolist",
@@ -18,8 +16,7 @@ export default {
     msg: String
   },
   components: {
-    TodoBottom,
-    GetSetFun
+    TodoBottom
   },
   methods: {
     handleSubmit() {

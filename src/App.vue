@@ -1,19 +1,28 @@
 <template>
   <div id="app">
     <TodoList msg="TodoList"/>
+    <GetSetFun/>
     <ClassStyleUse/>
+    <ItemOfListUse/>
+    <SetArrayObjUse/>
   </div>
 </template>
 
 <script>
 import TodoList from "./components/TodoList.vue";
-import ClassStyleUse from "./components/ClassStyleUse.vue";
+import GetSetFun from "./components/chapter_three/GetSetFun.vue";
+import ClassStyleUse from "./components/chapter_three/ClassStyleUse.vue";
+import ItemOfListUse from "./components/chapter_three/ItemOfListUse.vue";
+import SetArrayObjUse from "./components/chapter_three/SetArrayObjUse.vue";
 
 export default {
   name: "app",
   components: {
     TodoList,
-    ClassStyleUse
+    GetSetFun,
+    ClassStyleUse,
+    ItemOfListUse,
+    SetArrayObjUse,
   }
 };
 </script>

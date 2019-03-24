@@ -29,4 +29,11 @@ this.\$data.todoList === this.todoList
 
 #### ClassStyleUse
 
-讲解 样式使用的五种写法
+讲解 样式使用的五种写法  
+
+#### SetArrayObjUse
+
+第一种方式：改变 数组的 7 种操作，是可以让 vue 侦听到而重新渲染；  
+第二种方式：直接对数组对象，赋值 改变应用；  
+第三种方式：set 方法，在构建工具中 调用 this.$set();   
+注意：数组和对象，set 操作的不同。  

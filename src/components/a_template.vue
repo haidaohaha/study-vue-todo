@@ -11,6 +11,8 @@ export default {
   computed: {},
   watch: {},
   methods: {},
-  data() {}
+  data() {
+    return {}
+  }
 };
 </script>
