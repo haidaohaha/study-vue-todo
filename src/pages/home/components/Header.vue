@@ -32,7 +32,7 @@ export default {
     float: left;
 
     .cur-arr {
-      margin: 0 0.1rem;
+      margin: 0 0.2rem;
     }
   }
 

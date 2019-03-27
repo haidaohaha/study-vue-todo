@@ -2,16 +2,10 @@
   <div class="wrapper">
     <swiper :options="swiperOption">
       <swiper-slide>
-        <img class="swiper-img" src="../../../assets/images/home/8618e8fdb2af1532.jpg" alt="pic">
-      </swiper-slide>
-      <swiper-slide>
-        <img class="swiper-img" src="../../../assets/images/home/667f2f0b630f8b6f.jpg" alt="pic">
-      </swiper-slide>
-      <swiper-slide>
         <img class="swiper-img" src="../../../assets/images/home/c9667d74475c1eda.jpg" alt="pic">
       </swiper-slide>
-      <swiper-slide>
-        <img class="swiper-img" src="../../../assets/images/home/fddb6b047c02ba3d.jpg" alt="pic">
+      <swiper-slide v-for="item of swiperList" :key="item.id">
+        <img class="swiper-img" :src="item.imgUrl" alt="pic">
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
@@ -19,6 +13,8 @@
 </template>
 
 <script>
+const pic = require("../../../assets/images/home/667f2f0b630f8b6f.jpg");
+
 export default {
   name: "HomeSwiper",
   data() {
@@ -30,12 +26,24 @@ export default {
         },
         loop: true
       },
-      // 网络链接 可以使用 v-for 可惜现在不允许使用
+      // 使用网络图片也可以使用本地图片 v-for
       swiperList: [
         {
-          id: "8618e8fdb2af1532",
+          id: "b0a-8b6e-b451a48d",
           imgUrl:
             "https://haitao.nosdn2.127.net/70374e42-72c9-4b0a-8b6e-b451a48d6192T19032201013_960_480.jpg"
+        },
+        {
+          id: "667f2f0b630f8b6f",
+          imgUrl: pic
+        },
+        {
+          id: "fddb6b047c02ba3d",
+          imgUrl: require("../../../assets/images/home/fddb6b047c02ba3d.jpg")
+        },
+        {
+          id: "8618e8fdb2af1532",
+          imgUrl: require("../../../assets/images/home/8618e8fdb2af1532.jpg")
         }
       ]
     };
