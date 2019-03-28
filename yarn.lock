@@ -1194,7 +1194,7 @@ alphanum-sort@^1.0.0:
 
 amdefine@>=0.0.4:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+  resolved "http://registry.npm.taobao.org/amdefine/download/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
 ansi-colors@^3.0.0:
@@ -2335,7 +2335,7 @@ css-loader@^1.0.1:
 
 css-parse@1.7.x:
   version "1.7.0"
-  resolved "https://registry.yarnpkg.com/css-parse/-/css-parse-1.7.0.tgz#321f6cf73782a6ff751111390fc05e2c657d8c9b"
+  resolved "http://registry.npm.taobao.org/css-parse/download/css-parse-1.7.0.tgz#321f6cf73782a6ff751111390fc05e2c657d8c9b"
   integrity sha1-Mh9s9zeCpv91ERE5D8BeLGV9jJs=
 
 css-select-base-adapter@^0.1.1:
@@ -3653,7 +3653,7 @@ glob-to-regexp@^0.3.0:
 
 glob@7.0.x:
   version "7.0.6"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-7.0.6.tgz#211bafaf49e525b8cd93260d14ab136152b3f57a"
+  resolved "http://registry.npm.taobao.org/glob/download/glob-7.0.6.tgz?cache=0&other_urls=http%3A%2F%2Fregistry.npm.taobao.org%2Fglob%2Fdownload%2Fglob-7.0.6.tgz#211bafaf49e525b8cd93260d14ab136152b3f57a"
   integrity sha1-IRuvr0nlJbjNkyYNFKsTYVKz9Xo=
   dependencies:
     fs.realpath "^1.0.0"
@@ -4719,7 +4719,7 @@ locate-path@^3.0.0:
 
 lodash.clonedeep@^4.5.0:
   version "4.5.0"
-  resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
+  resolved "http://registry.npm.taobao.org/lodash.clonedeep/download/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
   integrity sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=
 
 lodash.defaultsdeep@^4.6.0:
@@ -6609,7 +6609,7 @@ safe-regex@^1.1.0:
 
 sax@0.5.x:
   version "0.5.8"
-  resolved "https://registry.yarnpkg.com/sax/-/sax-0.5.8.tgz#d472db228eb331c2506b0e8c15524adb939d12c1"
+  resolved "http://registry.npm.taobao.org/sax/download/sax-0.5.8.tgz#d472db228eb331c2506b0e8c15524adb939d12c1"
   integrity sha1-1HLbIo6zMcJQaw6MFVJK25OdEsE=
 
 sax@^1.2.4, sax@~1.2.4:
@@ -6882,7 +6882,7 @@ source-map-url@^0.4.0:
 
 source-map@0.1.x:
   version "0.1.43"
-  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
+  resolved "http://registry.npm.taobao.org/source-map/download/source-map-0.1.43.tgz#c24bc146ca517c1471f5dacbe2571b2b7f9e3346"
   integrity sha1-wkvBRspRfBRx9drL4lcbK3+eM0Y=
   dependencies:
     amdefine ">=0.0.4"
@@ -7162,8 +7162,8 @@ stylehacks@^4.0.0:
 
 stylus-loader@^3.0.2:
   version "3.0.2"
-  resolved "https://registry.yarnpkg.com/stylus-loader/-/stylus-loader-3.0.2.tgz#27a706420b05a38e038e7cacb153578d450513c6"
-  integrity sha512-+VomPdZ6a0razP+zinir61yZgpw2NfljeSsdUF5kJuEzlo3khXhY19Fn6l8QQz1GRJGtMCo8nG5C04ePyV7SUA==
+  resolved "http://registry.npm.taobao.org/stylus-loader/download/stylus-loader-3.0.2.tgz#27a706420b05a38e038e7cacb153578d450513c6"
+  integrity sha1-J6cGQgsFo44DjnyssVNXjUUFE8Y=
   dependencies:
     loader-utils "^1.0.2"
     lodash.clonedeep "^4.5.0"
@@ -7171,7 +7171,7 @@ stylus-loader@^3.0.2:
 
 stylus@^0.54.5:
   version "0.54.5"
-  resolved "https://registry.yarnpkg.com/stylus/-/stylus-0.54.5.tgz#42b9560931ca7090ce8515a798ba9e6aa3d6dc79"
+  resolved "http://registry.npm.taobao.org/stylus/download/stylus-0.54.5.tgz#42b9560931ca7090ce8515a798ba9e6aa3d6dc79"
   integrity sha1-QrlWCTHKcJDOhRWnmLqeaqPW3Hk=
   dependencies:
     css-parse "1.7.x"
@@ -7921,7 +7921,7 @@ websocket-extensions@>=0.1.1:
 
 when@~3.6.x:
   version "3.6.4"
-  resolved "https://registry.yarnpkg.com/when/-/when-3.6.4.tgz#473b517ec159e2b85005497a13983f095412e34e"
+  resolved "http://registry.npm.taobao.org/when/download/when-3.6.4.tgz#473b517ec159e2b85005497a13983f095412e34e"
   integrity sha1-RztRfsFZ4rhQBUl6E5g/CVQS404=
 
 which-module@^2.0.0:

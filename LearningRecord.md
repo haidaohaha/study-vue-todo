@@ -30,6 +30,15 @@ yarn add vue-awesome-swiper --save
 只写也是可以的,部分浏览器可能不支持:
     height: 48vw;
 }
-```
+```  
+
+#### styl 文件使用
+之前的一直看，没留意，现在还不知道 如何 导出 webpack 配置项，/(ㄒoㄒ)/~~  
+老师这么骚的操作：  
+ @import '~styles/varibles.styl'  
+ 
+我只能先这么写：  
+@import '../../../assets/styles/varibles.styl';  
+@import '~@/assets/styles/varibles.styl';  
 
 ####

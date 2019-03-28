@@ -36,7 +36,8 @@ export default {
           id: "0001",
           imgUrl:
             "https://m.360buyimg.com/mobilecms/s120x120_jfs/t1/32044/5/8064/14697/5c9ba0e1E35c9a830/3c52d2abd56dc034.png",
-          desc: "京东超市京东超市京东超市京东超市京东超市京东超市京东超市京东超市"
+          desc:
+            "京东超市京东超市京东超市京东超市京东超市京东超市京东超市京东超市"
         },
         {
           id: "0002",
@@ -99,6 +100,9 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '~@/assets/styles/varibles.styl';
+@import '~@/assets/styles/mixins.styl';
+
 .icons >>> .swiper-slide-active {
   width: 100%;
   height: 0;
@@ -140,11 +144,9 @@ export default {
       bottom: 0;
       height: 0.44rem;
       text-align: center;
-      color: #333;
+      color: $darkTextColor;
       // 实现 文字过多 ... 效果
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+      ellipsis();
     }
   }
 }
