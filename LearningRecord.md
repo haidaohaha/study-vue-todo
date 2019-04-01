@@ -41,4 +41,7 @@ yarn add vue-awesome-swiper --save
 @import '../../../assets/styles/varibles.styl';  
 @import '~@/assets/styles/varibles.styl';  
 
+#### 同样 CSS 不同的 img 实现不同的风格  
+CSS 太不简单了
+
 ####

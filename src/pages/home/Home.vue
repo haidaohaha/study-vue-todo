@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <Header/>
-    <Swiper/>
-    <Icons/>
-    <Recommend/>
+    <Swiper :swiperList="swiperList"/>
+    <Icons :iconList="iconList"/>
+    <Recommend :recommendList="recommendList"/>
+    <Weekend :weekendList="weekendList"/>
     <Picimport/>
-    <Weekend/>
   </div>
 </template>
 
@@ -16,15 +16,47 @@ import Icons from "./components/Icons.vue";
 import Recommend from "./components/Recommend.vue";
 import Weekend from "./components/Weekend.vue";
 import Picimport from "./components/Picimport.vue";
+import axios from 'axios';
+
 export default {
   name: "home",
   components: {
     Header,
     Swiper,
     Icons,
-    Recommend,Weekend,Picimport
+    Recommend,
+    Weekend,
+    Picimport
+  },
+  data (){
+    return {
+      swiperList:[],
+      iconList:[],
+      recommendList:[],
+      weekendList:[],
+    }
+  },
+  methods: {
+    getHomeInfo () {
+      // dev-server 代理配置后面补
+      axios.get('/static/mock/index.json')
+        .then(this.getHomeInfoSucc)
+    },
+    getHomeInfoSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.swiperList = data.swiperList
+        this.iconList = data.iconList
+        this.recommendList = data.recommendList
+        this.weekendList = data.weekendList
+      }
+    }
+  },
+  mounted () {
+    this.getHomeInfo()
   }
-};
+}
 </script>
 
 <style scoped></style>

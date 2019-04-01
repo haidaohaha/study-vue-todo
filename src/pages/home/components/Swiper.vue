@@ -1,9 +1,9 @@
 <template>
   <div class="wrapper">
-    <swiper :options="swiperOption">
-      <swiper-slide>
+    <swiper :options="swiperOption" v-if="swiperList.length">
+      <!-- <swiper-slide>
         <img class="swiper-img" src="../../../assets/images/home/c9667d74475c1eda.jpg" alt="pic">
-      </swiper-slide>
+      </swiper-slide> -->
       <swiper-slide v-for="item of swiperList" :key="item.id">
         <img class="swiper-img" :src="item.imgUrl" alt="pic">
       </swiper-slide>
@@ -17,6 +17,9 @@ const pic = require("../../../assets/images/home/667f2f0b630f8b6f.jpg");
 
 export default {
   name: "HomeSwiper",
+  props:{
+    swiperList: Array
+  },
   data() {
     return {
       swiperOption: {
@@ -27,7 +30,7 @@ export default {
         loop: true
       },
       // 使用网络图片也可以使用本地图片 v-for
-      swiperList: [
+      old_swiperList: [
         {
           id: "b0a-8b6e-b451a48d",
           imgUrl:
@@ -65,6 +68,7 @@ export default {
   width: 100%;
   height: 0;
   padding-bottom: 48%; // 可以理解为 '高' 和宽的 比例,这个比例来自 图片的宽高比
+  padding-bottom: 30%; // 请求数据
   background: #eee;
 
   .swiper-img {
