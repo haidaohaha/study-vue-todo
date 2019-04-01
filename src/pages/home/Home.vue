@@ -4,6 +4,8 @@
     <Swiper/>
     <Icons/>
     <Recommend/>
+    <Picimport/>
+    <Weekend/>
   </div>
 </template>
 
@@ -12,13 +14,15 @@ import Header from "./components/Header.vue";
 import Swiper from "./components/Swiper.vue";
 import Icons from "./components/Icons.vue";
 import Recommend from "./components/Recommend.vue";
+import Weekend from "./components/Weekend.vue";
+import Picimport from "./components/Picimport.vue";
 export default {
   name: "home",
   components: {
     Header,
     Swiper,
     Icons,
-    Recommend
+    Recommend,Weekend,Picimport
   }
 };
 </script>

@@ -1,20 +1,8 @@
 <template>
-  <div class="recommend">
-    <div class="recommend-title">热销推荐</div>
-    <ul>
-      <li class="item border-bottom">
-        <img
-          src="http://p1.meituan.net/200.0/deal/fb4b162a52cdca47e0f592459a292b4a71195.jpg"
-          alt
-          class="item-img"
-        >
-        <div class="item-info">
-          <p class="item-title">沪小二炭火蛙锅</p>
-          <p class="item-desc">[杭州等]100元代金券1张，可叠加</p>
-          <button class="item-button">查看详情</button>
-        </div>
-      </li>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+  <div class="picimport">
+      <div class="title">图片的重要性</div>
+      <ul>
+      <li class="item border-bottom" v-for="item of picimportList" :key="item.id">
         <img :src="item.imgUrl" alt class="item-img">
         <div class="item-info">
           <p class="item-title">{{item.infoTitle}}</p>
@@ -28,42 +16,43 @@
 
 <script>
 export default {
-  name: "HomeRecommend",
+  name: "HomePicimport",
   data() {
     return {
-      recommendList: [
+      picimportList: [
         {
-          id: "0001",
+          id: "0004",
           imgUrl:
-            "http://p1.meituan.net/200.0/deal/fb4b162a52cdca47e0f592459a292b4a71195.jpg",
-          infoTitle: "沪小二炭火蛙锅",
-          infoDesc: "[杭州等]100元代金券1张，可叠加"
+            "https://gw.alicdn.com/tfs/TB1r0eMOwHqK1RjSZJnXXbNLpXa-1150-352.png_790x10000.jpg_.webp",
+           infoTitle: "送你两百块优惠券",
+          infoDesc: "春游季周边新玩法go"
         },
         {
-          id: "0002",
+          id: "0005",
           imgUrl:
-            "http://p1.meituan.net/200.0/deal/fb4b162a52cdca47e0f592459a292b4a71195.jpg",
-          infoTitle: "沪小二炭火蛙锅",
-          infoDesc: "[杭州等]100元代金券1张，可叠加"
+            "https://gw.alicdn.com/imgextra/i2/192/O1CN01GCuE1g1DHyYTFXMYP_!!192-0-luban.jpg_790x10000Q75.jpg_.webp",
+          infoTitle: "陪你去赏樱花",
+          infoDesc: "100元优惠券配送中"
         },
         {
-          id: "0003",
+          id: "0006",
           imgUrl:
             "http://p1.meituan.net/200.0/deal/fb4b162a52cdca47e0f592459a292b4a71195.jpg",
-          infoTitle: "沪小二炭火蛙锅",
-          infoDesc: "[杭州等]100元代金券1张，可叠加"
-        },
+          infoTitle: "陪你去赏樱花",
+          infoDesc: "100元优惠券配送中"
+        }
       ]
     };
   }
 };
 </script>
 
+
 <style lang="stylus" scoped>
 @import '~@/assets/styles/mixins.styl';
 
-.recommend {
-  .recommend-title {
+.picimport {
+  .title {
     margin-top: 0.2rem;
     line-height: 0.8rem;
     background: #eee;
