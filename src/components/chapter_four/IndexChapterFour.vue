@@ -2,9 +2,10 @@
 </style>
 <template>
   <div class="index_chapter_four">
-   <UseRef/>
+    <UseRef/>
 
-   <UseFatherAndSon/>
+    <UseFatherAndSon/>
+    <router-link to="https://www.baidu.com/">hahah</router-link>
   </div>
 </template>
 <script>
@@ -12,9 +13,9 @@ import UseRef from "./UseRef.vue";
 import UseFatherAndSon from "./UseFatherAndSon.vue";
 export default {
   name: "index_chapter_four",
-  components:{
+  components: {
     UseRef,
-    UseFatherAndSon,
+    UseFatherAndSon
   }
 };
 </script>

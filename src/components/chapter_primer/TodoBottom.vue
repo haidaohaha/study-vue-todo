@@ -48,12 +48,15 @@ export default {
   //   console.log(this.$el);
   //   console.log("mounted");
   // },
+  // activated() {
+  //   console.log("activated");
+  // },
   // beforeUpdate() {
   //   console.log("beforeUpdate");
   // },
-  // updated(){
+  // updated() {
   //   console.log("updated");
-  // },
+  // }
   // // 销毁 参见 TodoItem
   // beforeDestroy(){
   //   console.log("beforeDestroy");

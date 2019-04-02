@@ -1,45 +1,12 @@
 <template>
   <div id="app">
-    <!-- <TodoList msg="TodoList"/> -->
-
-    <!-- <GetSetFun/> -->
-    <!-- <ClassStyleUse/> -->
-    <!-- <ItemOfListUse/> -->
-    <!-- <SetArrayObjUse/> -->
-
-    <ChapterFour/>
-
-
-
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
-
-<script>
-// primer 初始 VUE 
-// import TodoList from "./components/chapter_primer/TodoList.vue";
-
-// 第三章
-// import GetSetFun from "./components/chapter_three/GetSetFun.vue";
-// import ClassStyleUse from "./components/chapter_three/ClassStyleUse.vue";
-// import ItemOfListUse from "./components/chapter_three/ItemOfListUse.vue";
-// import SetArrayObjUse from "./components/chapter_three/SetArrayObjUse.vue";
-
-// 第四章
-import ChapterFour from "./components/chapter_four/IndexChapterFour.vue";
-
-
-export default {
-  name: "app",
-  components: {
-    // TodoList,
-    // GetSetFun,
-    // ClassStyleUse,
-    // ItemOfListUse,
-    // SetArrayObjUse,
-    ChapterFour,
-  }
-};
-</script>
 
 <style>
 #app {
@@ -51,3 +18,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+
