@@ -19,7 +19,7 @@ import Picimport from "./components/Picimport.vue";
 import axios from 'axios';
 
 export default {
-  name: "home",
+  name: "Home",
   components: {
     Header,
     Swiper,

@@ -6,10 +6,12 @@
     <div class="header-input">
       <span class="iconfont cur-input">&#xe632;</span>输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
+    <router-link to="/city">
+      <div class="header-right">
       上海
       <span class="iconfont cur-add">&#xe64a;</span>
     </div>
+    </router-link>
   </div>
 </template>
 
