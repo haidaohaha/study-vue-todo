@@ -34,7 +34,7 @@ export default {
     input {
       text-align: center;
       width: 100%;
-      font-size: 0.2rem;
+      font-size: 0.28rem;
     }
   }
 }
