@@ -1,13 +1,55 @@
 <template>
   <div class="alphabet">
-    <div class="item" v-for="(item,key) of cities" :key="key">{{key}}</div>
+    <div
+      class="item"
+      v-for="item of letters"
+      :key="item"
+      :ref="item"
+      @click="handleLetterClick"
+      @touchstart="handleTouchStart"
+      @touchmove="handleTouchMove"
+      @touchend="handleTouchEnd"
+    >{{item}}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: "CityAlphabet",
-  props: { cities: Object }
+  props: { cities: Object },
+  data() {
+    return {
+      touchStatus: false // 判断是否在指定的区域
+    };
+  },
+  computed: {
+    letters() {
+      let letters = [];
+      for (const key in this.cities) {
+        letters.push(key);
+      }
+      return letters;
+    }
+  },
+  methods: {
+    handleLetterClick(e) {
+      this.$emit("change", e.target.innerText);
+    },
+    handleTouchStart() {
+      this.touchStatus = true;
+    },
+    handleTouchMove(e) {
+      if (this.touchStatus) {
+        const startY = this.$refs["A"][0].offsetTop;
+        const touchY = e.touches[0].clientY - 86;
+        const index = (touchY - startY) / 21;
+        this.$emit("change", this.letters[index]);
+      }
+    },
+    handleTouchEnd() {
+      this.touchStatus = false;
+    }
+  }
 };
 </script>
 
