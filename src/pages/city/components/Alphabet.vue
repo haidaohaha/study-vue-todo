@@ -1,23 +1,13 @@
 <template>
   <div class="alphabet">
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
-    <div class="item">A</div>
+    <div class="item" v-for="(item,key) of cities" :key="key">{{key}}</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "CityAlphabet"
+  name: "CityAlphabet",
+  props: { cities: Object }
 };
 </script>
 
@@ -36,7 +26,7 @@ export default {
   justify-content: center;
 
   .item {
-    line-height: 0.4rem;
+    line-height: 0.42rem;
     text-align: center;
     color: $bgColor;
   }
