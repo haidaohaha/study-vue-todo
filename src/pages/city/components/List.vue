@@ -1,88 +1,97 @@
 <template>
-  <div class="list">
-    <div class="area">
-      <div class="title border-topbottom">当前城市</div>
-      <div class="button-list">
-        <div class="button-wrapper">
-          <div class="button">上海</div>
+  <div class="list" ref="wrapper">
+    <div class="content">
+      <div class="area">
+        <div class="title border-topbottom">当前城市</div>
+        <div class="button-list">
+          <div class="button-wrapper">
+            <div class="button">上海</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="title border-topbottom">热门城市</div>
-      <div class="button-list">
-        <div class="button-wrapper">
-          <div class="button">上海</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">上海</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">上海</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">上海</div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">上海</div>
+      <div class="area">
+        <div class="title border-topbottom">热门城市</div>
+        <div class="button-list">
+          <div class="button-wrapper">
+            <div class="button">上海</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">上海</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">上海</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">上海</div>
+          </div>
+          <div class="button-wrapper">
+            <div class="button">上海</div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="title border-topbottom">A</div>
-      <div class="item-list">
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
+      <div class="area">
+        <div class="title border-topbottom">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+        </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="title border-topbottom">A</div>
-      <div class="item-list">
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
+      <div class="area">
+        <div class="title border-topbottom">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+        </div>
       </div>
-    </div>
-    <div class="area">
-      <div class="title border-topbottom">A</div>
-      <div class="item-list">
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
-        <div class="item border-bottom">阿丽塔</div>
+      <div class="area">
+        <div class="title border-topbottom">A</div>
+        <div class="item-list">
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+          <div class="item border-bottom">阿丽塔</div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import BScroll from "better-scroll";
+
 export default {
-  name: "CityList"
+  name: "CityList",
+  mounted() {
+    const scroll = new BScroll(this.$refs.wrapper);
+  }
 };
 </script>
 
 <style lang="stylus" scoped>
+@import '~@/assets/styles/varibles.styl';
+
 .border-topbottom {
   &:before {
     border-color: #ccc;
