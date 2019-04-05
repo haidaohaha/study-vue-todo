@@ -20,7 +20,8 @@ export default {
   data() {
     return {
       touchStatus: false, // 判断是否在指定的区域
-      startY: 0
+      startY: 0,
+      timer:null
     };
   },
   computed: {
