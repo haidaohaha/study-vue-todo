@@ -17,6 +17,7 @@ import Recommend from "./components/Recommend.vue";
 import Weekend from "./components/Weekend.vue";
 import Picimport from "./components/Picimport.vue";
 import axios from 'axios';
+import { mapState } from "vuex";
 
 export default {
   name: "Home",
@@ -27,6 +28,9 @@ export default {
     Recommend,
     Weekend,
     Picimport
+  },
+  computed:{
+    ...mapState(['city'])
   },
   data (){
     return {
@@ -39,7 +43,7 @@ export default {
   methods: {
     getHomeInfo () {
       // dev-server 代理配置后面补
-      axios.get('/static/mock/index.json')
+      axios.get('/static/mock/index.json?city=' + this.city)
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
@@ -54,8 +58,15 @@ export default {
     }
   },
   mounted () {
-    this.getHomeInfo()
-  }
+    this.lastCity = this.city;
+    this.getHomeInfo();
+  },
+  activated () {
+    if(this.lastCity !== this.city){
+      this.lastCity = this.city;
+      this.getHomeInfo();
+    }    
+  },
 }
 </script>
 

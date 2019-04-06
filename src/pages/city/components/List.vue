@@ -6,7 +6,7 @@
         <div class="button-list">
           <div class="button-wrapper">
             <!-- <div class="button">{{this.$store.state.city}}</div> -->
-            <div class="button">{{this.city}}</div>
+            <div class="button"  @click="handleClickCityName()">{{this.city}}</div>
           </div>
         </div>
       </div>
@@ -59,7 +59,7 @@ export default {
   methods:{
     ...mapActions(['ClickCityName']),
     ...mapMutations(['ChangeCity']),
-    handleClickCityName(city){
+    handleClickCityName(city=this.city){
       // this.$store.dispatch('ClickCityName',city)
       // 目前不涉及异步 可以直接 执行 commit ChangeCity
       // this.$store.commit('ChangeCity',city);

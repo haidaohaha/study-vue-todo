@@ -63,8 +63,16 @@ localStorage.getItem('city');
 
 ```
 
-#### 8-10 比较重要 拆分 store  
+#### Vuex的高级使用及localStorage 比较重要 拆分 store 看懂大型项目  
 “熟悉配方” redux   
-最后看到 getters 貌似可以用于很多高级的写法中。  
+最后看到 getters 貌似可以用于很多高级的写法中，现在还不会伤心。
+
+#### keep-alive   
+"keep-alive" 包裹动态组件时，会缓存不活动的组件实例，而不是销毁它们。   
+和 transition 相似，keep-alive 是一个抽象组件：它自身不会渲染一个 DOM 元素，也不会出现在父组件链中。  
+当组件在 keep-alive 内被切换，它的 activated 和 deactivated 这两个生命周期钩子函数将会被对应执行。  
+多出两个生命周期勾子，之前看不懂的原因。   
+
+[keep-alive](https://cn.vuejs.org/v2/api/#keep-alive)  
 
 ####

@@ -8,24 +8,20 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-      <!-- {{this.$store.state.city}} -->
-      {{this.doubleCity}}
-      <span class="iconfont cur-add">&#xe64a;</span>
-    </div>
+        {{ this.city }}
+        <span class="iconfont cur-add">&#xe64a;</span>
+      </div>
     </router-link>
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapState } from "vuex";
 export default {
   name: "HomeHeader" //尽然和 class 不需要一样，一样如果你的样式中，使用这个 class 则会报错。
   ,
   computed:{
-    // ...mapGetters({doubleCity}),
-    ...mapGetters({
-      doubleCity:'doubleCity'
-    })
+    ...mapState(['city'])
   }
 };
 </script>
