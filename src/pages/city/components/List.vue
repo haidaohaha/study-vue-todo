@@ -5,7 +5,8 @@
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
           <div class="button-wrapper">
-            <div class="button">{{this.$store.state.city}}</div>
+            <!-- <div class="button">{{this.$store.state.city}}</div> -->
+            <div class="button">{{this.city}}</div>
           </div>
         </div>
       </div>
@@ -29,7 +30,7 @@
 
 <script>
 import BScroll from "better-scroll";
-
+import { mapState, mapMutations, mapActions } from "vuex";
 export default {
   name: "CityList",
   props: {
@@ -40,6 +41,13 @@ export default {
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper);
   },
+  computed:{
+    // ...mapState(['city'])
+    // city(){return mapState(['city'])}
+    ...mapState({
+      city:'city'
+    })
+  },
   watch: {
     letter() {
       if (this.letter) {
@@ -49,10 +57,18 @@ export default {
     }
   },
   methods:{
+    ...mapActions(['ClickCityName']),
+    ...mapMutations(['ChangeCity']),
     handleClickCityName(city){
       // this.$store.dispatch('ClickCityName',city)
       // 目前不涉及异步 可以直接 执行 commit ChangeCity
-      this.$store.commit('ChangeCity',city);
+      // this.$store.commit('ChangeCity',city);
+
+      // mapActions
+      // this.ClickCityName(city)
+      // mapMutations
+      this.ChangeCity(city)
+      
       this.$router.push('/');
     }
   }

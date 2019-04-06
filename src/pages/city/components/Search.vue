@@ -19,6 +19,7 @@
 
 <script>
 import BScroll from "better-scroll";
+import { mapMutations, mapActions } from "vuex";
 export default {
   name: "CitySearch",
   props:{
@@ -63,10 +64,18 @@ export default {
     }
   },
   methods:{
+    ...mapActions(['ClickCityName']),
+    ...mapMutations(['ChangeCity']),
     handleClickCityName(city){
-       // this.$store.dispatch('ClickCityName',city)
+      // this.$store.dispatch('ClickCityName',city)
       // 目前不涉及异步 可以直接 执行 commit ChangeCity
-      this.$store.commit('ChangeCity',city);
+      // this.$store.commit('ChangeCity',city);
+
+      // mapActions
+      this.ClickCityName(city);
+      // mapMutations
+      // this.ChangeCity(city);
+
       this.$router.push('/');
     }
   }

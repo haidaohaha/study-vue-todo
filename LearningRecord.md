@@ -45,7 +45,26 @@ yarn add vue-awesome-swiper --save
 CSS 太不简单了
 
 #### vuex
-直接使用 vue ui 添加的，基本符合我入门的要求，记一记使用规则就好。😅😅😅
+直接使用 vue ui 添加的，基本符合我入门的要求，记一记使用规则就好。😅😅😅  
+按照图  
+![vuex](./vuex.png)  
+一步步书写即可。  
 
-####
+#### localStorage 还能这么使用，服气  
+```
+localStorage.setItem('city','拉萨');
+
+localStorage.city = '拉萨';
+使用  
+localStorage.city  
+不需要  
+localStorage.getItem('city');  
+也可以混用  
+
+```
+
+#### 8-10 比较重要 拆分 store  
+“熟悉配方” redux   
+最后看到 getters 貌似可以用于很多高级的写法中。  
+
 ####
