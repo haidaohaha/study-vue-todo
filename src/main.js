@@ -13,11 +13,13 @@ import fastclick from 'fastclick';
 // 轮播
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
+import store from './store'
 Vue.config.productionTip = false;
 fastclick.attach(document.body);
 Vue.use(VueAwesomeSwiper /* { default global options } */);
 
 new Vue({
     router,
+    store,
     render: h => h(App)
 }).$mount('#app');

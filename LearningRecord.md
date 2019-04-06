@@ -44,4 +44,8 @@ yarn add vue-awesome-swiper --save
 #### 同样 CSS 不同的 img 实现不同的风格  
 CSS 太不简单了
 
+#### vuex
+直接使用 vue ui 添加的，基本符合我入门的要求，记一记使用规则就好。😅😅😅
+
+####
 ####

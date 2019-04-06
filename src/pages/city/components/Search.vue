@@ -9,6 +9,7 @@
     <ul>
       <li class="search-item border-bottom"
       v-for="item in list" :key="item.id"
+      @click="handleClickCityName(item.name)"
       >{{item.name}}</li>
       <li v-show="dataNo" class="search-item border-bottom">没有找到匹配的数据</li>
     </ul>
@@ -52,13 +53,21 @@ export default {
             for (let i = 0; i < itemArr.length; i++) {
               const item = itemArr[i];
                if(item.spell.indexOf(this.keyword)>-1||item.name.indexOf(this.keyword)>-1 ){
-              list.push(item)
+                list.push(item)
+              }
             }
-            }
-      this.list= list
+            this.list= list
           }
         }
       }, 100);
+    }
+  },
+  methods:{
+    handleClickCityName(city){
+       // this.$store.dispatch('ClickCityName',city)
+      // 目前不涉及异步 可以直接 执行 commit ChangeCity
+      this.$store.commit('ChangeCity',city);
+      this.$router.push('/');
     }
   }
 };
