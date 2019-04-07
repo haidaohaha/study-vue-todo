@@ -1,15 +1,19 @@
 <template>
   <div class="detail">
     <Banner/>
+    <Header/>
   </div>
 </template>
 
 <script>
 import Banner from "./components/Banner.vue";
+import Header from "./components/Header.vue";
+
 export default {
   name: "Detail",
   components: {
-    Banner
+    Banner,
+    Header
   },
   computed:{},
   data (){
@@ -19,4 +23,8 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.detail{
+  height: 50rem;
+}
+</style>
