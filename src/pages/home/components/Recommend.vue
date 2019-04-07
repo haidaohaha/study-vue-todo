@@ -2,26 +2,20 @@
   <div class="recommend">
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <!-- <li class="item border-bottom">
-        <img
-          src="http://p1.meituan.net/200.0/deal/fb4b162a52cdca47e0f592459a292b4a71195.jpg"
-          alt
-          class="item-img"
-        >
-        <div class="item-info">
-          <p class="item-title">沪小二炭火蛙锅</p>
-          <p class="item-desc">[杭州等]100元代金券1张，可叠加</p>
-          <button class="item-button">查看详情</button>
-        </div>
-      </li> -->
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <router-link
+        tag="li"
+        class="item border-bottom"
+        v-for="item of recommendList"
+        :key="item.id"
+        :to="'/detail/'+item.id"
+      >
         <img :src="item.imgUrl" alt class="item-img">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
           <button class="item-button">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
   </div>
 </template>
@@ -29,7 +23,7 @@
 <script>
 export default {
   name: "HomeRecommend",
-  props:{
+  props: {
     recommendList: Array
   },
   data() {
@@ -55,7 +49,7 @@ export default {
             "http://p1.meituan.net/200.0/deal/fb4b162a52cdca47e0f592459a292b4a71195.jpg",
           title: "沪小二炭火蛙锅",
           desc: "[杭州等]100元代金券1张，可叠加"
-        },
+        }
       ]
     };
   }

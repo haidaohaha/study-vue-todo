@@ -75,4 +75,8 @@ localStorage.getItem('city');
 
 [keep-alive](https://cn.vuejs.org/v2/api/#keep-alive)  
 
+#### tap 的使用，如果你不记得了  赶紧找找
+
+####
+
 ####
