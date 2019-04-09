@@ -113,6 +113,20 @@ export default {
  对应文件目录，定义后期我的规划是，  
  页面名称+组件文件名称 = 组件内部 name 名称， class 使用组件文件名称.
 
+#### 本节优化
+
+这两段独立的代码,分别的作用是什么?
+
+```
+  <keep-alive exclude="Detail">
+    <router-view/>
+  </keep-alive>
+
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
+```
+
 ####
 
 ####

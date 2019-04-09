@@ -2,21 +2,16 @@
   <div>
     <div class="banner">
       <div class="banner-img-wrap" @click="handleGallaryOpen">
-        <img
-          class="banner-img"
-          src="http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_600x330_b40971b4.jpg"
-          alt
-          srcset
-        >
+        <img class="banner-img" :src="bannerImg" alt srcset>
       </div>
       <div class="banner-info">
-        <div class="info-title">八达岭长城(AAAAA景区)</div>
+        <div class="info-title">{{this.sightName}}</div>
         <div class="info-number">
           <span class="iconfont banner-icon">&#xe692;</span>39
         </div>
       </div>
     </div>
-    <CommonGallery :imgs="imgs" v-show="showGallary" @close="handleGallaryClose"/>
+    <CommonGallery :imgs="gallaryImgs" v-show="showGallary" @close="handleGallaryClose"/>
   </div>
 </template>
 
@@ -24,6 +19,11 @@
 import CommonGallery from "@/common/gallery/Gallery.vue";
 export default {
   name: "DetailBanner",
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
+  },
   components: {
     CommonGallery
   },
@@ -46,6 +46,9 @@ export default {
     handleGallaryClose() {
       this.showGallary = false;
     }
+  },
+  activated() {
+    this.showGallary = false;
   }
 };
 </script>

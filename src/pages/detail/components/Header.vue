@@ -68,6 +68,7 @@ export default {
 }
 
 .header-fixed {
+  z-index: 1;
   height: $headerHeight;
   line-height: $headerHeight;
   background: $bgColor;

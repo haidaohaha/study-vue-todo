@@ -10,13 +10,13 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Header from "./components/Header.vue";
 import Swiper from "./components/Swiper.vue";
 import Icons from "./components/Icons.vue";
 import Recommend from "./components/Recommend.vue";
 import Weekend from "./components/Weekend.vue";
 import Picimport from "./components/Picimport.vue";
-import axios from 'axios';
 import { mapState } from "vuex";
 
 export default {
