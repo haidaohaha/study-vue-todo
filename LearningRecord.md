@@ -127,6 +127,8 @@ export default {
   }
 ```
 
+#### 修复上一节 使用 exclude="Detail" 造成 header 渐隐渐显 失效
+
 ####
 
 ####

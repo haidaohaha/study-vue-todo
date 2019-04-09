@@ -32,7 +32,7 @@ export default new Router({
   // 解决 每次进入详情时 浏览器会记住上一次 滚动的位置.我们不希望这样
   // 希望每次都是顶部
   // scrollBehavior (to, from, savedPosition) {
-  scrollBehavior () {
-    return { x: 0, y: 0 }
-  }
+  // scrollBehavior () {
+  //   return { x: 0, y: 0 }
+  // }
 })

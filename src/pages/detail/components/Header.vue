@@ -38,10 +38,17 @@ export default {
       }
     }
   },
+  // 我把 详情页 给 移出了， 这两个 勾子 不能使用了。
   activated() {
     window.addEventListener("scroll", this.handleScroll);
   },
   deactivated() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  mounted(){
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  beforeDestroy(){
     window.removeEventListener("scroll", this.handleScroll);
   }
 };
