@@ -83,6 +83,6 @@ export default {
 
 <style scoped>
 .detail {
-  height: 50rem;
+  /* height: 50rem; */
 }
 </style>

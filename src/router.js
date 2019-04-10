@@ -29,7 +29,7 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './pages/about/About.vue')
     }
   ],
-  // 解决 每次进入详情时 浏览器会记住上一次 滚动的位置.我们不希望这样
+  // 解决 每次进入详情时 在返回主页时 浏览器会记住上一次 滚动的位置.我们不希望这样
   // 希望每次都是顶部
   // scrollBehavior (to, from, savedPosition) {
   scrollBehavior () {

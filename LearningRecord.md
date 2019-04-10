@@ -118,10 +118,12 @@ export default {
 这两段独立的代码,分别的作用是什么?
 
 ```
+1、
   <keep-alive exclude="Detail">
     <router-view/>
   </keep-alive>
 
+2、
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
   }
