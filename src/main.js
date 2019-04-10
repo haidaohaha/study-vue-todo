@@ -6,14 +6,14 @@ import './assets/styles/reset.css';
 import './assets/styles/border.css';
 // 字体图标
 import './assets/styles/iconfont.css';
-
+import 'babel-polyfill';
 // 移动端 某些机型 click 事件存在 300 ms 延迟，音响体验
 // 安装 fastclick
 import fastclick from 'fastclick';
 // 轮播
 import VueAwesomeSwiper from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
-import store from './store/index'
+import store from './store/index';
 Vue.config.productionTip = false;
 fastclick.attach(document.body);
 Vue.use(VueAwesomeSwiper /* { default global options } */);
