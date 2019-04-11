@@ -1,16 +1,10 @@
-let defaultCity = '拉萨';
+let defaultCity = '上海'
 try {
-    // if(localStorage.getItem('city')){
-    if(localStorage.city){
-        // defaultCity = localStorage.getItem('city')
-        // 可以直接这么写 
-        defaultCity = localStorage.city
-    }
-} catch (error) {
-    defaultCity = '拉萨';
-}
+  if (localStorage.city) {
+    defaultCity = localStorage.city
+  }
+} catch (e) {}
 
 export default {
-    city: defaultCity
+  city: defaultCity
 }
-  

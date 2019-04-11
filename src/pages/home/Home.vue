@@ -1,49 +1,45 @@
 <template>
-  <div class="home">
-    <Header/>
-    <Swiper :swiperList="swiperList"/>
-    <Icons :iconList="iconList"/>
-    <Recommend :recommendList="recommendList"/>
-    <Weekend :weekendList="weekendList"/>
-    <Picimport/>
+  <div>
+    <home-header></home-header>
+    <home-swiper :list="swiperList"></home-swiper>
+    <home-icons :list="iconList"></home-icons>
+    <home-recommend :list="recommendList"></home-recommend>
+    <home-weekend :list="weekendList"></home-weekend>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import Header from "./components/Header.vue";
-import Swiper from "./components/Swiper.vue";
-import Icons from "./components/Icons.vue";
-import Recommend from "./components/Recommend.vue";
-import Weekend from "./components/Weekend.vue";
-import Picimport from "./components/Picimport.vue";
-import { mapState } from "vuex";
-
+import HomeHeader from './components/Header'
+import HomeSwiper from './components/Swiper'
+import HomeIcons from './components/Icons'
+import HomeRecommend from './components/Recommend'
+import HomeWeekend from './components/Weekend'
+import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
-    Header,
-    Swiper,
-    Icons,
-    Recommend,
-    Weekend,
-    Picimport
+    HomeHeader,
+    HomeSwiper,
+    HomeIcons,
+    HomeRecommend,
+    HomeWeekend
   },
-  computed:{
-    ...mapState(['city'])
-  },
-  data (){
+  data () {
     return {
-      swiperList:[],
-      iconList:[],
-      recommendList:[],
-      weekendList:[],
+      lastCity: '',
+      swiperList: [],
+      iconList: [],
+      recommendList: [],
+      weekendList: []
     }
+  },
+  computed: {
+    ...mapState(['city'])
   },
   methods: {
     getHomeInfo () {
-      // dev-server 代理配置后面补
-      axios.get('/static/mock/index.json?city=' + this.city)
+      axios.get('/api/index.json?city=' + this.city)
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
@@ -58,16 +54,18 @@ export default {
     }
   },
   mounted () {
-    this.lastCity = this.city;
-    this.getHomeInfo();
+    this.lastCity = this.city
+    this.getHomeInfo()
   },
   activated () {
-    if(this.lastCity !== this.city){
-      this.lastCity = this.city;
-      this.getHomeInfo();
-    }    
-  },
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getHomeInfo()
+    }
+  }
 }
 </script>
 
-<style scoped></style>
+<style>
+
+</style>

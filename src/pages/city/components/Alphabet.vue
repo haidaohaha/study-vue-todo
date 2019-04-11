@@ -1,87 +1,86 @@
 <template>
-  <div class="alphabet">
-    <div
+  <ul class="list">
+    <li
       class="item"
       v-for="item of letters"
       :key="item"
       :ref="item"
-      @click="handleLetterClick"
-      @touchstart="handleTouchStart"
+      @touchstart.prevent="handleTouchStart"
       @touchmove="handleTouchMove"
       @touchend="handleTouchEnd"
-    >{{item}}</div>
-  </div>
+      @click="handleLetterClick"
+    >
+      {{item}}
+    </li>
+  </ul>
 </template>
 
 <script>
 export default {
-  name: "CityAlphabet",
-  props: { cities: Object },
-  data() {
-    return {
-      touchStatus: false, // 判断是否在指定的区域
-      startY: 0,
-      timer:null
-    };
+  name: 'CityAlphabet',
+  props: {
+    cities: Object
   },
   computed: {
-    letters() {
-      let letters = [];
-      for (const key in this.cities) {
-        letters.push(key);
+    letters () {
+      const letters = []
+      for (let i in this.cities) {
+        letters.push(i)
       }
-      return letters;
+      return letters
     }
   },
-  updated() {
-    this.startY = this.$refs["A"][0].offsetTop;
+  data () {
+    return {
+      touchStatus: false,
+      startY: 0,
+      timer: null
+    }
+  },
+  updated () {
+    this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
-    handleLetterClick(e) {
-      this.$emit("change", e.target.innerText);
+    handleLetterClick (e) {
+      this.$emit('change', e.target.innerText)
     },
-    handleTouchStart() {
-      this.touchStatus = true;
+    handleTouchStart () {
+      this.touchStatus = true
     },
-    handleTouchMove(e) {
+    handleTouchMove (e) {
       if (this.touchStatus) {
         if (this.timer) {
-          clearTimeout(this.timer);
+          clearTimeout(this.timer)
         }
         this.timer = setTimeout(() => {
-          const touchY = e.touches[0].clientY - 86;
-          const index = Math.floor((touchY - this.startY) / 21);
+          const touchY = e.touches[0].clientY - 79
+          const index = Math.floor((touchY - this.startY) / 20)
           if (index >= 0 && index < this.letters.length) {
-            this.$emit("change", this.letters[index]);
+            this.$emit('change', this.letters[index])
           }
-        }, 16);
+        }, 16)
       }
     },
-    handleTouchEnd() {
-      this.touchStatus = false;
+    handleTouchEnd () {
+      this.touchStatus = false
     }
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/assets/styles/varibles.styl';
-
-.alphabet {
-  display: flex;
-  // background: red;
-  position: absolute;
-  top: 1.7rem;
-  right: 0;
-  bottom: 0;
-  width: 0.5rem;
-  flex-direction: column;
-  justify-content: center;
-
-  .item {
-    line-height: 0.42rem;
-    text-align: center;
-    color: $bgColor;
-  }
-}
+  @import '~styles/varibles.styl'
+  .list
+    display: flex
+    flex-direction: column
+    justify-content: center
+    position: absolute
+    top: 1.58rem
+    right: 0
+    bottom: 0
+    width: .4rem
+    .item
+      line-height: .4rem
+      text-align: center
+      color: $bgColor
 </style>

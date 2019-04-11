@@ -1,25 +1,26 @@
-import Vue from 'vue';
-import App from './App.vue';
-import router from './router';
-import './assets/styles/reset.css';
-// 解决 1px 物理像素 边框问题
-import './assets/styles/border.css';
-// 字体图标
-import './assets/styles/iconfont.css';
+// The Vue build version to load with the `import` command
+// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+import Vue from 'vue'
+import App from './App'
+import router from './router'
+import fastClick from 'fastclick'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'babel-polyfill'
+import store from './store'
+import 'styles/reset.css'
+import 'styles/border.css'
+import 'styles/iconfont.css'
+import 'swiper/dist/css/swiper.css'
 
-// 移动端 某些机型 click 事件存在 300 ms 延迟，音响体验
-// 安装 fastclick
-import fastclick from 'fastclick';
-// 轮播
-import VueAwesomeSwiper from 'vue-awesome-swiper';
-import 'swiper/dist/css/swiper.css';
-import store from './store/index'
-Vue.config.productionTip = false;
-fastclick.attach(document.body);
-Vue.use(VueAwesomeSwiper /* { default global options } */);
+Vue.config.productionTip = false
+fastClick.attach(document.body)
+Vue.use(VueAwesomeSwiper)
 
+/* eslint-disable no-new */
 new Vue({
-    router,
-    store,
-    render: h => h(App)
-}).$mount('#app');
+  el: '#app',
+  router,
+  store,
+  components: { App },
+  template: '<App/>'
+})

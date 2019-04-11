@@ -1,49 +1,21 @@
-# my-vue
+# travel
 
-## Project setup
+> A Vue.js project
 
-```
-yarn install
-```
+## Build Setup
 
-### Compiles and hot-reloads for development
+``` bash
+# install dependencies
+npm install
 
-```
-yarn run serve
-```
+# serve with hot reload at localhost:8080
+npm run dev
 
-### Compiles and minifies for production
+# build for production with minification
+npm run build
 
-```
-yarn run build
-```
-
-### Run your tests
-
-```
-yarn run test
+# build for production and view the bundle analyzer report
+npm run build --report
 ```
 
-### Lints and fixes files
-
-```
-yarn run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
-### 现在才开始学 VUE 哈哈
-
-#### 开个分支 dev
-
-### 学着学着发现 配置有问题
-项目没有配置路由  
-
-☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆    
-😅 今天，使用 vue ui 项目初始化  
-☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆  
-
-🌂🌂🌂  
-对于已经建立的项目，也是可以运行 vue ui 的，找到对应的 文件夹，很直观的看到，运行、打包、更新依赖、安全检查等...（自己探索）  
+For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

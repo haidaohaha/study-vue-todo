@@ -1,128 +1,112 @@
 <template>
-<div>
-  <div class="search">
-    <div class="header-input">
-      <input v-model="keyword" type="text" placeholder="输入城市名或拼音">
+  <div>
+    <div class="search">
+      <input v-model="keyword" class="search-input" type="text" placeholder="输入城市名或拼音" />
+    </div>
+    <div
+      class="search-content"
+      ref="search"
+      v-show="keyword"
+    >
+      <ul>
+        <li
+          class="search-item border-bottom"
+          v-for="item of list"
+          :key="item.id"
+          @click="handleCityClick(item.name)"
+        >
+          {{item.name}}
+        </li>
+        <li class="search-item border-bottom" v-show="hasNoData">
+          没有找到匹配数据
+        </li>
+      </ul>
     </div>
   </div>
-  <div class="search-content" v-show="keyword" ref="wrapper">
-    <ul>
-      <li class="search-item border-bottom"
-      v-for="item in list" :key="item.id"
-      @click="handleClickCityName(item.name)"
-      >{{item.name}}</li>
-      <li v-show="dataNo" class="search-item border-bottom">没有找到匹配的数据</li>
-    </ul>
-  </div>
-</div>
 </template>
 
 <script>
-import BScroll from "better-scroll";
-import { mapMutations, mapActions } from "vuex";
+import Bscroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 export default {
-  name: "CitySearch",
-  props:{
-    cities: Object,
+  name: 'CitySearch',
+  props: {
+    cities: Object
   },
   data () {
     return {
-      keyword:'',
-      list:[],
-      timer:null
+      keyword: '',
+      list: [],
+      timer: null
     }
   },
-  mounted(){
-    this.scroll = new BScroll(this.$refs.wrapper);
-  },
-  computed:{
-    dataNo(){
-     return !this.list.length
+  computed: {
+    hasNoData () {
+      return !this.list.length
     }
   },
-  watch:{
-    keyword(){
-      let list = [];
-      const cities = this.cities;
-      if(this.timer){
+  watch: {
+    keyword () {
+      if (this.timer) {
         clearTimeout(this.timer)
       }
-      this.timer = this.keyword&&setTimeout(() => {
-        for (const key in cities) {
-          if (cities.hasOwnProperty(key)) {
-            const itemArr = cities[key];
-            for (let i = 0; i < itemArr.length; i++) {
-              const item = itemArr[i];
-               if(item.spell.indexOf(this.keyword)>-1||item.name.indexOf(this.keyword)>-1 ){
-                list.push(item)
-              }
+      if (!this.keyword) {
+        this.list = []
+        return
+      }
+      this.timer = setTimeout(() => {
+        const result = []
+        for (let i in this.cities) {
+          this.cities[i].forEach((value) => {
+            if (value.spell.indexOf(this.keyword) > -1 || value.name.indexOf(this.keyword) > -1) {
+              result.push(value)
             }
-            this.list= list
-          }
+          })
         }
-      }, 100);
+        this.list = result
+      }, 100)
     }
   },
-  methods:{
-    ...mapActions(['ClickCityName']),
-    ...mapMutations(['ChangeCity']),
-    handleClickCityName(city){
-      // this.$store.dispatch('ClickCityName',city)
-      // 目前不涉及异步 可以直接 执行 commit ChangeCity
-      // this.$store.commit('ChangeCity',city);
-
-      // mapActions
-      this.ClickCityName(city);
-      // mapMutations
-      // this.ChangeCity(city);
-
-      this.$router.push('/');
-    }
+  methods: {
+    handleCityClick (city) {
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.search)
   }
-};
+}
 </script>
 
 <style lang="stylus" scoped>
-@import '~@/assets/styles/varibles.styl';
-
-.search {
-  height: $headerHeight;
-  line-height: $headerHeight;
-  background: $bgColor;
-  color: #fff;
-  overflow: hidden;
-
-  .header-input {
-    height: 0.64rem;
-    line-height: 0.64rem;
-    margin: 0.12rem;
-    padding-left: 0.2rem;
-    background: #fff;
-    border-radius: 0.1rem;
-    color: #ccc;
-
-    input {
-      text-align: center;
-      width: 100%;
-      font-size: 0.28rem;
-    }
-  }
-}
-
-.search-content{
-  position absolute;
-  // 增加后无滚动  需要 使用 better scroll
-  overflow hidden;
-  top 1.7rem;
-  left 0;
-  right 0;
-  bottom 0;
-  background #fff;
-  z-index :100;
-
-  .search-item{
-    line-height: 0.74rem;
-    padding-left : .1rem;
-  }
-}
+  @import '~styles/varibles.styl'
+  .search
+    height: .72rem
+    padding: 0 .1rem
+    background: $bgColor
+    .search-input
+      box-sizing: border-box
+      width: 100%
+      height: .62rem
+      padding: 0 .1rem
+      line-height: .62rem
+      text-align: center
+      border-radius: .06rem
+      color: #666
+  .search-content
+    z-index: 1
+    overflow: hidden
+    position: absolute
+    top: 1.58rem
+    left: 0
+    right: 0
+    bottom: 0
+    background: #eee
+    .search-item
+      line-height: .62rem
+      padding-left: .2rem
+      background: #fff
+      color: #666
 </style>
