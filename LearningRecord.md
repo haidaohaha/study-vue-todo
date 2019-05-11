@@ -77,4 +77,14 @@ webpack 默认不支持，ip 地址打开项目。 此时需要增加 --host 0.0
 4、这一节主要是，利用 webpack 的特性，实现 异步加载，可以看看，有利于在大型项目中，分割代码，提高性能（我已经在项目中使用）;  
 5、这个要点讲解一下，这个是非常重要的，相当于大佬在引导，或者说指路 ;
 
-### 抽时间关注 ： 5、课程总结与后续学习指南
+### 抽时间关注 ： 5、课程总结与后续学习指南  
+
+### Cloud Studio  
+使用 腾讯云开发者平台，要到 访问启动后的地址，此时的 8080 需要进行映射，直接访问会遇到 Invalid Host header   
+
+原因是： vue-cli搭建的环境，用nginx做代理服务器，访问时显示：Invalid Host header
+
+经查是因为新版的webpack-dev-server出于安全考虑，默认检查hostname，如果hostname不是配置内的就不能访问。这样有2中方法，一种是设置跳过host检查，一种是直接host设置成你的地址。  
+
+具体可以看这里：  
+[Invalid Host header 服务器域名访问出现的问题](https://blog.csdn.net/Cookysurongbin/article/details/86077241)
